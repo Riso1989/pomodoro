@@ -1,0 +1,47 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div id="pomodoro">
+  <div id="upper-buttons">
+  <button (click)="setPomodoro()">Pomodoro</button>
+  <button (click)="setShortBreak()">Short break</button>
+  <button (click)="setLongBreak()">Long break</button>
+  <button (click)="openForm()">Custom Pomodoro</button>
+</div>
+
+<div id="state">
+    <label>{{state}}</label>
+</div>
+
+<div id="timer">
+  <label>{{countDown | async | formatTime}}</label>
+    <div id="myProgress">
+      <div id="myBar"></div>
+    </div>
+</div>
+
+<div id="bottom-buttons">
+  <button class="material-icons" (click)="nextStep()">skip_next</button>
+  <button class="material-icons" (click)="pauseCounter()">pause</button>
+  <button class="material-icons" (click)="resumeCounter()">play_arrow</button>
+</div>
+
+<div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>Custom Pomodoro</h1>
+  
+      <label for="pomodoro"><b>Pomodoro</b></label>
+      <input type="number" value='{{pomodoro}}' [(ngModel)]="pomodoro" placeholder="pomodoro" name="pomodoro" required>
+     
+      <label for="numberOfLoops"><b>Loops</b></label>
+      <input type="number" value='{{numberOfLoops}}' [(ngModel)]="numberOfLoops" placeholder="numberOfLoops" name="loops" required>
+     
+      <label for="shortBreak"><b>Short break</b></label>
+      <input type="number" value='{{shortBreak}}' [(ngModel)]="shortBreak" placeholder="shortBreak" name="shortBreak" required>
+     
+      <label for="longBreak"><b>Long break</b></label>
+      <input type="number" value='{{longBreak}}' [(ngModel)]="longBreak" placeholder="longBreak" name="longBreak" required>
+     
+      <button type="submit" class="btn" (click)="setVariables()">Set</button>
+      <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
+    </form>
+  </div>

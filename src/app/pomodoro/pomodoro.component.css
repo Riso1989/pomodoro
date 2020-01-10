@@ -1,0 +1,157 @@
+#pomodoro {
+font-family: 'Baloo Tammudu', cursive;
+height: 100vh;
+background-color: #cc6666;
+font-weight: 900;
+display: grid;
+grid-template-columns: 100%;
+grid-template-rows: 15% 20% 35% 30% ;
+grid-template-areas:
+  "upper-buttons"
+  "state"
+  "timer"
+  "bottom-buttons";
+}
+
+#state {
+display: flex;
+flex-flow: column;
+align-items: center;
+justify-content: center;
+grid-area: state;
+font-size: 300%;
+}
+
+#upper-buttons {
+grid-area: upper-buttons;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+button {
+  font-weight: 900;
+  width: 20%;
+  margin: 2%;
+  height: 5rem;
+  font-size: 100%;
+  background: #eff9f9;
+  border: none;
+  color: #cc6666; 
+  border-radius: 50px;
+  outline:none;
+}
+
+.material-icons {
+font-size: 150%;
+}
+
+button:hover {
+  background-color: #c65353;
+  color: #eff9f9;
+}
+
+#bottom-buttons {
+  grid-area: bottom-buttons;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 200%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background: #66cccc;
+}
+
+#timer {
+  grid-area: timer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  justify-content: space-around;
+  font-size: 400%;
+}
+
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  }
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=number]  {
+  width: 95%;
+  padding: 7px 7px;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=number]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 45%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+#myProgress {
+  width: 90%;
+  background-color: #cecbcb;
+  height: 30px;
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: #66cc99;
+}
+
